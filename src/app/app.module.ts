@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatTableModule} from '@angular/material/table';
 import { MatSliderModule } from '@angular/material/slider';
-
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 @NgModule({
   declarations: [ 
@@ -31,7 +31,8 @@ import { MatSliderModule } from '@angular/material/slider';
     GoogleChartsModule.forRoot(),
     BrowserAnimationsModule,
     MatSliderModule,
-    MatTableModule  
+    MatTableModule,
+    MatPaginatorModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
