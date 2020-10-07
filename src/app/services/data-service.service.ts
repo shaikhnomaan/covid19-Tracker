@@ -3,6 +3,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { GlobalDataSummary } from '../model/global-data';
 import { DateWiseData } from '../model/date-wise-data';
+import { Data } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,7 @@ export class DataServiceService {
   month;
   date;
   year;
+  
 
   getDate(date : number){
     if(date < 10){
@@ -75,7 +78,7 @@ export class DataServiceService {
     }));
   }
   
-  getGlobalData(){   
+  getGlobalData() : Observable<GlobalDataSummary[]>{   
     return this.http.get(this.globalDataUrl , {responseType : 'text'}).pipe(
       map(result=>{
         let data: GlobalDataSummary[] = [];
